@@ -5,6 +5,7 @@ import {
   InvoiceForm,
   InvoicesTable,
   LatestInvoiceRaw,
+  Produk,
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
@@ -214,5 +215,22 @@ export async function fetchFilteredCustomers(query: string) {
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch customer table.');
+  }
+}
+export async function fetchProduk() {
+  try {
+    const produk = await sql<Produk[]>`
+      SELECT
+        id_produk,
+        nama_produk
+      FROM produk
+       ORDER BY nama_produk ASC
+      
+    `;
+
+    return produk;
+  } catch (err) {
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch all customers.');
   }
 }

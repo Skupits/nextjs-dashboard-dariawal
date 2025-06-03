@@ -86,3 +86,11 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+export type Produk ={
+  id_produk:string;
+  nama_produk:string;
+  harga: string;
+  stok: string;
+  foto:string;
+  deskripsi:string;
+};
