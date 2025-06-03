@@ -16,42 +16,6 @@ model customers {
   Transaksi Transaksi[]
 }
 
-model grocery_market {
-  id                Int       @id @default(autoincrement())
-  product_name      String    @db.VarChar(100)
-  category          String?   @db.VarChar(50)
-  price             Decimal   @db.Decimal(10, 2)
-  quantity_in_stock Int
-  supplier          String?   @db.VarChar(100)
-  expiration_date   DateTime? @db.Date
-}
-
-model invoices {
-  id          String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  customer_id String   @db.Uuid
-  amount      Int
-  status      String   @db.VarChar(255)
-  date        DateTime @db.Date
-}
-
-model playing_with_neon {
-  id    Int    @id @default(autoincrement())
-  name  String
-  value Float? @db.Real
-}
-
-model revenue {
-  month   String @unique @db.VarChar(4)
-  revenue Int
-}
-
-model users {
-  id       String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  name     String @db.VarChar(255)
-  email    String @unique
-  password String
-}
-
 model produk {
   id_produk   String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   nama_produk String      @db.VarChar(255)
