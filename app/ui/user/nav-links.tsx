@@ -14,10 +14,10 @@ import clsx from 'clsx';
 // Daftar link
 const links = [
   { name: 'Home', href: '/dashboard', icon: HomeIcon },
-  { name: 'About Us', href: '/dashboard/aboutUS', icon: DocumentDuplicateIcon },
-  { name: 'Our Teams', href: '/dashboard/ourteams', icon: UserGroupIcon },
-  { name: 'Contact', href : '/dashboard/Contact', icon: ChatBubbleLeftIcon},
-  { name: 'Shop', href : '/dashboard/shop', icon: ShoppingCartIcon},
+  { name: 'About Us', href: '/user/aboutUS', icon: DocumentDuplicateIcon },
+  { name: 'Our Teams', href: '/user/ourteams', icon: UserGroupIcon },
+  { name: 'Contact', href : '/user/Contact', icon: ChatBubbleLeftIcon},
+  { name: 'Shop', href : '/user/shop', icon: ShoppingCartIcon},
 ];
 
 export default function NavLinks() {
