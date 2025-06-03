@@ -143,7 +143,7 @@ const revenue = [
   { month: 'Nov', revenue: 3000 },
   { month: 'Dec', revenue: 4800 },
 ];
-export const categories = [
+ const categories = [
   {
     id: 1,
     title: "Sembako",
@@ -194,7 +194,7 @@ export const categories = [
   },
 ];
 
-export const products = [
+ const products = [
   {
     id: 1,
     categoryId: 1,
@@ -277,7 +277,7 @@ export const products = [
   },
 ];
 
-export const teamData = [
+ const teamData = [
   {
     id: 1,
     name: "Richardo Mario Martin",
@@ -301,9 +301,9 @@ export const teamData = [
   },
 ];
 
-export const user = teamData.find((member) => member.id === 2);
+ const user = teamData.find((member) => member.id === 2);
 
-export const transactions = [
+ const transactions = [
   {
     id: 1,
     userId: 2,
@@ -336,7 +336,7 @@ export const transactions = [
   },
 ];
 
-export const inventory = [
+ const inventory = [
   {
     id: 1,
     productsId: 1,
@@ -394,7 +394,7 @@ export const inventory = [
     location: "Rak 5E",
   },
 ];
-export {}
+
 
 
 export { users, customers, invoices, revenue,categories,teamData,inventory,transactions,products };
