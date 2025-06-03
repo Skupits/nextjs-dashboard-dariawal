@@ -189,7 +189,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/mnt/d/SIWEBB/tugas dari awal/nextjs-dashboard/generated/prisma",
+      "value": "/home/kupit/nextjs-dashboard-dariawal/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -203,12 +203,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/mnt/d/SIWEBB/tugas dari awal/nextjs-dashboard/prisma/schema.prisma",
+    "sourceFilePath": "/home/kupit/nextjs-dashboard-dariawal/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.8.2",
