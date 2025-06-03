@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  provider      = "prisma-client-js"
+  output        = "../generated/prisma"
+  binaryTargets = ["native", "debian-openssl-3.0.x", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
@@ -9,11 +10,10 @@ datasource db {
 }
 
 model customers {
-  id        String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  name      String      @db.VarChar(255)
-  email     String      @db.VarChar(255)
-  image_url String      @db.VarChar(255)
-  Transaksi Transaksi[]
+  id        String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name      String @db.VarChar(255)
+  email     String @db.VarChar(255)
+  image_url String @db.VarChar(255)
 }
 
 model grocery_market {
@@ -50,23 +50,4 @@ model users {
   name     String @db.VarChar(255)
   email    String @unique
   password String
-}
-
-model produk {
-  id_produk   String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  nama_produk String      @db.VarChar(255)
-  harga       Int
-  stok        Int
-  foto        String      @db.VarChar(255)
-  Transaksi   Transaksi[]
-}
-
-model Transaksi {
-  id_transaksi String    @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  id_produk    String
-  produk       produk    @relation(fields: [id_produk], references: [id_produk])
-  id           String
-  customers    customers @relation(fields: [id], references: [id])
-  Date         DateTime  @db.Date
-  total_harga  Int
 }
