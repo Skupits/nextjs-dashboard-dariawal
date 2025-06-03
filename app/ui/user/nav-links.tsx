@@ -14,8 +14,8 @@ import clsx from 'clsx';
 // Daftar link
 const links = [
   { name: 'Home', href: '/dashboard', icon: HomeIcon },
-  { name: 'About Us', href: '/user/aboutUS', icon: DocumentDuplicateIcon },
-  { name: 'Our Teams', href: '/user/ourteams', icon: UserGroupIcon },
+  { name: 'About Us', href: '/user/AboutUs', icon: DocumentDuplicateIcon },
+  { name: 'Our Teams', href: '/user/OurTeams', icon: UserGroupIcon },
   { name: 'Contact', href : '/user/Contact', icon: ChatBubbleLeftIcon},
   { name: 'Shop', href : '/user/shop', icon: ShoppingCartIcon},
 ];
