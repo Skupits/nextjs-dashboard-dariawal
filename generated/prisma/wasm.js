@@ -127,6 +127,42 @@ exports.Prisma.CustomersScalarFieldEnum = {
   image_url: 'image_url'
 };
 
+exports.Prisma.Grocery_marketScalarFieldEnum = {
+  id: 'id',
+  product_name: 'product_name',
+  category: 'category',
+  price: 'price',
+  quantity_in_stock: 'quantity_in_stock',
+  supplier: 'supplier',
+  expiration_date: 'expiration_date'
+};
+
+exports.Prisma.InvoicesScalarFieldEnum = {
+  id: 'id',
+  customer_id: 'customer_id',
+  amount: 'amount',
+  status: 'status',
+  date: 'date'
+};
+
+exports.Prisma.Playing_with_neonScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  value: 'value'
+};
+
+exports.Prisma.RevenueScalarFieldEnum = {
+  month: 'month',
+  revenue: 'revenue'
+};
+
+exports.Prisma.UsersScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  password: 'password'
+};
+
 exports.Prisma.ProdukScalarFieldEnum = {
   id_produk: 'id_produk',
   nama_produk: 'nama_produk',
@@ -138,7 +174,7 @@ exports.Prisma.ProdukScalarFieldEnum = {
 exports.Prisma.TransaksiScalarFieldEnum = {
   id_transaksi: 'id_transaksi',
   id_produk: 'id_produk',
-  customerId: 'customerId',
+  id: 'id',
   Date: 'Date',
   total_harga: 'total_harga'
 };
@@ -153,9 +189,19 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
   customers: 'customers',
+  grocery_market: 'grocery_market',
+  invoices: 'invoices',
+  playing_with_neon: 'playing_with_neon',
+  revenue: 'revenue',
+  users: 'users',
   produk: 'produk',
   Transaksi: 'Transaksi'
 };
