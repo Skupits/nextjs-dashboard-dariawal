@@ -9,28 +9,62 @@ datasource db {
 }
 
 model customers {
-  id        String     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  name      String     @db.VarChar(255)
-  email     String     @db.VarChar(255)
-  image_url String     @db.VarChar(255)
-  Transaksi Transaksi[] @relation("CustomerTransaksi")
+  id        String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name      String @db.VarChar(255)
+  email     String @db.VarChar(255)
+  image_url String @db.VarChar(255)
+  Transaksi Transaksi[]
 }
 
+model grocery_market {
+  id                Int       @id @default(autoincrement())
+  product_name      String    @db.VarChar(100)
+  category          String?   @db.VarChar(50)
+  price             Decimal   @db.Decimal(10, 2)
+  quantity_in_stock Int
+  supplier          String?   @db.VarChar(100)
+  expiration_date   DateTime? @db.Date
+}
+
+model invoices {
+  id          String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  customer_id String   @db.Uuid
+  amount      Int
+  status      String   @db.VarChar(255)
+  date        DateTime @db.Date
+}
+
+model playing_with_neon {
+  id    Int    @id @default(autoincrement())
+  name  String
+  value Float? @db.Real
+}
+
+model revenue {
+  month   String @unique @db.VarChar(4)
+  revenue Int
+}
+
+model users {
+  id       String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name     String @db.VarChar(255)
+  email    String @unique
+  password String
+}
 model produk {
-  id_produk String     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  nama_produk String   @db.VarChar(255)
-  harga     Int
-  stok      Int
-  foto      String     @db.VarChar(255)
-  Transaksi Transaksi[] @relation("ProdukTransaksi")
+  id_produk      String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  nama_produk String @db.VarChar(255)
+  harga    Int
+  stok     Int
+  foto     String @db.VarChar(255)
+  Transaksi Transaksi[]
 }
-
 model Transaksi {
-  id_transaksi String    @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  id_produk    String    @db.Uuid
-  produk       produk    @relation("ProdukTransaksi", fields: [id_produk], references: [id_produk])
-  customerId   String    @db.Uuid
-  customers    customers @relation("CustomerTransaksi", fields: [customerId], references: [id])
-  Date         DateTime  @db.Date
-  total_harga  Int
+  id_transaksi String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  id_produk    String 
+  produk    produk @relation(fields: [id_produk], references: [id_produk])
+  id    String
+  customers customers @relation(fields: [id], references: [id])
+  Date  DateTime @db.Date
+  total_harga Int
 }
