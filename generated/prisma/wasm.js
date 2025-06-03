@@ -163,6 +163,22 @@ exports.Prisma.UsersScalarFieldEnum = {
   password: 'password'
 };
 
+exports.Prisma.ProdukScalarFieldEnum = {
+  id_produk: 'id_produk',
+  nama_produk: 'nama_produk',
+  harga: 'harga',
+  stok: 'stok',
+  foto: 'foto'
+};
+
+exports.Prisma.TransaksiScalarFieldEnum = {
+  id_transaksi: 'id_transaksi',
+  id_produk: 'id_produk',
+  id: 'id',
+  Date: 'Date',
+  total_harga: 'total_harga'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -185,7 +201,9 @@ exports.Prisma.ModelName = {
   invoices: 'invoices',
   playing_with_neon: 'playing_with_neon',
   revenue: 'revenue',
-  users: 'users'
+  users: 'users',
+  produk: 'produk',
+  Transaksi: 'Transaksi'
 };
 
 /**
