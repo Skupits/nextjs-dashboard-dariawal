@@ -181,14 +181,6 @@ const config = {
         "fromEnvVar": null,
         "value": "debian-openssl-3.0.x",
         "native": true
-      },
-      {
-        "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x"
-      },
-      {
-        "fromEnvVar": null,
-        "value": "rhel-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -215,8 +207,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../generated/prisma\"\n  binaryTargets = [\"native\", \"debian-openssl-3.0.x\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel customers {\n  id        String @id @default(dbgenerated(\"uuid_generate_v4()\")) @db.Uuid\n  name      String @db.VarChar(255)\n  email     String @db.VarChar(255)\n  image_url String @db.VarChar(255)\n}\n\nmodel grocery_market {\n  id                Int       @id @default(autoincrement())\n  product_name      String    @db.VarChar(100)\n  category          String?   @db.VarChar(50)\n  price             Decimal   @db.Decimal(10, 2)\n  quantity_in_stock Int\n  supplier          String?   @db.VarChar(100)\n  expiration_date   DateTime? @db.Date\n}\n\nmodel invoices {\n  id          String   @id @default(dbgenerated(\"uuid_generate_v4()\")) @db.Uuid\n  customer_id String   @db.Uuid\n  amount      Int\n  status      String   @db.VarChar(255)\n  date        DateTime @db.Date\n}\n\nmodel playing_with_neon {\n  id    Int    @id @default(autoincrement())\n  name  String\n  value Float? @db.Real\n}\n\nmodel revenue {\n  month   String @unique @db.VarChar(4)\n  revenue Int\n}\n\nmodel users {\n  id       String @id @default(dbgenerated(\"uuid_generate_v4()\")) @db.Uuid\n  name     String @db.VarChar(255)\n  email    String @unique\n  password String\n}\n",
-  "inlineSchemaHash": "542670dfb9b72666647ef14b14b763a9efc115d5224e2c502acc9c18885f49c3",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel customers {\n  id        String @id @default(dbgenerated(\"uuid_generate_v4()\")) @db.Uuid\n  name      String @db.VarChar(255)\n  email     String @db.VarChar(255)\n  image_url String @db.VarChar(255)\n}\n\nmodel grocery_market {\n  id                Int       @id @default(autoincrement())\n  product_name      String    @db.VarChar(100)\n  category          String?   @db.VarChar(50)\n  price             Decimal   @db.Decimal(10, 2)\n  quantity_in_stock Int\n  supplier          String?   @db.VarChar(100)\n  expiration_date   DateTime? @db.Date\n}\n\nmodel invoices {\n  id          String   @id @default(dbgenerated(\"uuid_generate_v4()\")) @db.Uuid\n  customer_id String   @db.Uuid\n  amount      Int\n  status      String   @db.VarChar(255)\n  date        DateTime @db.Date\n}\n\nmodel playing_with_neon {\n  id    Int    @id @default(autoincrement())\n  name  String\n  value Float? @db.Real\n}\n\nmodel revenue {\n  month   String @unique @db.VarChar(4)\n  revenue Int\n}\n\nmodel users {\n  id       String @id @default(dbgenerated(\"uuid_generate_v4()\")) @db.Uuid\n  name     String @db.VarChar(255)\n  email    String @unique\n  password String\n}\n",
+  "inlineSchemaHash": "0bbd0f83fed55fde2881418031acef4f661d7bd63fc495ea07234dcf30c74d65",
   "copyEngine": true
 }
 config.dirname = '/'
