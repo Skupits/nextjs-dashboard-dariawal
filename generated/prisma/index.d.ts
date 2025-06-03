@@ -3300,7 +3300,7 @@ export namespace Prisma {
   export type TransaksiMinAggregateOutputType = {
     id_transaksi: string | null
     id_produk: string | null
-    id: string | null
+    customerId: string | null
     Date: Date | null
     total_harga: number | null
   }
@@ -3308,7 +3308,7 @@ export namespace Prisma {
   export type TransaksiMaxAggregateOutputType = {
     id_transaksi: string | null
     id_produk: string | null
-    id: string | null
+    customerId: string | null
     Date: Date | null
     total_harga: number | null
   }
@@ -3316,7 +3316,7 @@ export namespace Prisma {
   export type TransaksiCountAggregateOutputType = {
     id_transaksi: number
     id_produk: number
-    id: number
+    customerId: number
     Date: number
     total_harga: number
     _all: number
@@ -3334,7 +3334,7 @@ export namespace Prisma {
   export type TransaksiMinAggregateInputType = {
     id_transaksi?: true
     id_produk?: true
-    id?: true
+    customerId?: true
     Date?: true
     total_harga?: true
   }
@@ -3342,7 +3342,7 @@ export namespace Prisma {
   export type TransaksiMaxAggregateInputType = {
     id_transaksi?: true
     id_produk?: true
-    id?: true
+    customerId?: true
     Date?: true
     total_harga?: true
   }
@@ -3350,7 +3350,7 @@ export namespace Prisma {
   export type TransaksiCountAggregateInputType = {
     id_transaksi?: true
     id_produk?: true
-    id?: true
+    customerId?: true
     Date?: true
     total_harga?: true
     _all?: true
@@ -3445,7 +3445,7 @@ export namespace Prisma {
   export type TransaksiGroupByOutputType = {
     id_transaksi: string
     id_produk: string
-    id: string
+    customerId: string
     Date: Date
     total_harga: number
     _count: TransaksiCountAggregateOutputType | null
@@ -3472,7 +3472,7 @@ export namespace Prisma {
   export type TransaksiSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id_transaksi?: boolean
     id_produk?: boolean
-    id?: boolean
+    customerId?: boolean
     Date?: boolean
     total_harga?: boolean
     produk?: boolean | produkDefaultArgs<ExtArgs>
@@ -3482,7 +3482,7 @@ export namespace Prisma {
   export type TransaksiSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id_transaksi?: boolean
     id_produk?: boolean
-    id?: boolean
+    customerId?: boolean
     Date?: boolean
     total_harga?: boolean
     produk?: boolean | produkDefaultArgs<ExtArgs>
@@ -3492,7 +3492,7 @@ export namespace Prisma {
   export type TransaksiSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id_transaksi?: boolean
     id_produk?: boolean
-    id?: boolean
+    customerId?: boolean
     Date?: boolean
     total_harga?: boolean
     produk?: boolean | produkDefaultArgs<ExtArgs>
@@ -3502,12 +3502,12 @@ export namespace Prisma {
   export type TransaksiSelectScalar = {
     id_transaksi?: boolean
     id_produk?: boolean
-    id?: boolean
+    customerId?: boolean
     Date?: boolean
     total_harga?: boolean
   }
 
-  export type TransaksiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id_transaksi" | "id_produk" | "id" | "Date" | "total_harga", ExtArgs["result"]["transaksi"]>
+  export type TransaksiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id_transaksi" | "id_produk" | "customerId" | "Date" | "total_harga", ExtArgs["result"]["transaksi"]>
   export type TransaksiInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     produk?: boolean | produkDefaultArgs<ExtArgs>
     customers?: boolean | customersDefaultArgs<ExtArgs>
@@ -3530,7 +3530,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id_transaksi: string
       id_produk: string
-      id: string
+      customerId: string
       Date: Date
       total_harga: number
     }, ExtArgs["result"]["transaksi"]>
@@ -3960,7 +3960,7 @@ export namespace Prisma {
   interface TransaksiFieldRefs {
     readonly id_transaksi: FieldRef<"Transaksi", 'String'>
     readonly id_produk: FieldRef<"Transaksi", 'String'>
-    readonly id: FieldRef<"Transaksi", 'String'>
+    readonly customerId: FieldRef<"Transaksi", 'String'>
     readonly Date: FieldRef<"Transaksi", 'DateTime'>
     readonly total_harga: FieldRef<"Transaksi", 'Int'>
   }
@@ -4415,7 +4415,7 @@ export namespace Prisma {
   export const TransaksiScalarFieldEnum: {
     id_transaksi: 'id_transaksi',
     id_produk: 'id_produk',
-    id: 'id',
+    customerId: 'customerId',
     Date: 'Date',
     total_harga: 'total_harga'
   };
@@ -4615,8 +4615,8 @@ export namespace Prisma {
     OR?: TransaksiWhereInput[]
     NOT?: TransaksiWhereInput | TransaksiWhereInput[]
     id_transaksi?: UuidFilter<"Transaksi"> | string
-    id_produk?: StringFilter<"Transaksi"> | string
-    id?: StringFilter<"Transaksi"> | string
+    id_produk?: UuidFilter<"Transaksi"> | string
+    customerId?: UuidFilter<"Transaksi"> | string
     Date?: DateTimeFilter<"Transaksi"> | Date | string
     total_harga?: IntFilter<"Transaksi"> | number
     produk?: XOR<ProdukScalarRelationFilter, produkWhereInput>
@@ -4626,7 +4626,7 @@ export namespace Prisma {
   export type TransaksiOrderByWithRelationInput = {
     id_transaksi?: SortOrder
     id_produk?: SortOrder
-    id?: SortOrder
+    customerId?: SortOrder
     Date?: SortOrder
     total_harga?: SortOrder
     produk?: produkOrderByWithRelationInput
@@ -4638,8 +4638,8 @@ export namespace Prisma {
     AND?: TransaksiWhereInput | TransaksiWhereInput[]
     OR?: TransaksiWhereInput[]
     NOT?: TransaksiWhereInput | TransaksiWhereInput[]
-    id_produk?: StringFilter<"Transaksi"> | string
-    id?: StringFilter<"Transaksi"> | string
+    id_produk?: UuidFilter<"Transaksi"> | string
+    customerId?: UuidFilter<"Transaksi"> | string
     Date?: DateTimeFilter<"Transaksi"> | Date | string
     total_harga?: IntFilter<"Transaksi"> | number
     produk?: XOR<ProdukScalarRelationFilter, produkWhereInput>
@@ -4649,7 +4649,7 @@ export namespace Prisma {
   export type TransaksiOrderByWithAggregationInput = {
     id_transaksi?: SortOrder
     id_produk?: SortOrder
-    id?: SortOrder
+    customerId?: SortOrder
     Date?: SortOrder
     total_harga?: SortOrder
     _count?: TransaksiCountOrderByAggregateInput
@@ -4664,8 +4664,8 @@ export namespace Prisma {
     OR?: TransaksiScalarWhereWithAggregatesInput[]
     NOT?: TransaksiScalarWhereWithAggregatesInput | TransaksiScalarWhereWithAggregatesInput[]
     id_transaksi?: UuidWithAggregatesFilter<"Transaksi"> | string
-    id_produk?: StringWithAggregatesFilter<"Transaksi"> | string
-    id?: StringWithAggregatesFilter<"Transaksi"> | string
+    id_produk?: UuidWithAggregatesFilter<"Transaksi"> | string
+    customerId?: UuidWithAggregatesFilter<"Transaksi"> | string
     Date?: DateTimeWithAggregatesFilter<"Transaksi"> | Date | string
     total_harga?: IntWithAggregatesFilter<"Transaksi"> | number
   }
@@ -4794,7 +4794,7 @@ export namespace Prisma {
   export type TransaksiUncheckedCreateInput = {
     id_transaksi?: string
     id_produk: string
-    id: string
+    customerId: string
     Date: Date | string
     total_harga: number
   }
@@ -4810,7 +4810,7 @@ export namespace Prisma {
   export type TransaksiUncheckedUpdateInput = {
     id_transaksi?: StringFieldUpdateOperationsInput | string
     id_produk?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
+    customerId?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
     total_harga?: IntFieldUpdateOperationsInput | number
   }
@@ -4818,7 +4818,7 @@ export namespace Prisma {
   export type TransaksiCreateManyInput = {
     id_transaksi?: string
     id_produk: string
-    id: string
+    customerId: string
     Date: Date | string
     total_harga: number
   }
@@ -4832,7 +4832,7 @@ export namespace Prisma {
   export type TransaksiUncheckedUpdateManyInput = {
     id_transaksi?: StringFieldUpdateOperationsInput | string
     id_produk?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
+    customerId?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
     total_harga?: IntFieldUpdateOperationsInput | number
   }
@@ -5013,7 +5013,7 @@ export namespace Prisma {
   export type TransaksiCountOrderByAggregateInput = {
     id_transaksi?: SortOrder
     id_produk?: SortOrder
-    id?: SortOrder
+    customerId?: SortOrder
     Date?: SortOrder
     total_harga?: SortOrder
   }
@@ -5025,7 +5025,7 @@ export namespace Prisma {
   export type TransaksiMaxOrderByAggregateInput = {
     id_transaksi?: SortOrder
     id_produk?: SortOrder
-    id?: SortOrder
+    customerId?: SortOrder
     Date?: SortOrder
     total_harga?: SortOrder
   }
@@ -5033,7 +5033,7 @@ export namespace Prisma {
   export type TransaksiMinOrderByAggregateInput = {
     id_transaksi?: SortOrder
     id_produk?: SortOrder
-    id?: SortOrder
+    customerId?: SortOrder
     Date?: SortOrder
     total_harga?: SortOrder
   }
@@ -5348,8 +5348,8 @@ export namespace Prisma {
     OR?: TransaksiScalarWhereInput[]
     NOT?: TransaksiScalarWhereInput | TransaksiScalarWhereInput[]
     id_transaksi?: UuidFilter<"Transaksi"> | string
-    id_produk?: StringFilter<"Transaksi"> | string
-    id?: StringFilter<"Transaksi"> | string
+    id_produk?: UuidFilter<"Transaksi"> | string
+    customerId?: UuidFilter<"Transaksi"> | string
     Date?: DateTimeFilter<"Transaksi"> | Date | string
     total_harga?: IntFilter<"Transaksi"> | number
   }
@@ -5363,7 +5363,7 @@ export namespace Prisma {
 
   export type TransaksiUncheckedCreateWithoutProdukInput = {
     id_transaksi?: string
-    id: string
+    customerId: string
     Date: Date | string
     total_harga: number
   }
@@ -5516,7 +5516,7 @@ export namespace Prisma {
 
   export type TransaksiCreateManyProdukInput = {
     id_transaksi?: string
-    id: string
+    customerId: string
     Date: Date | string
     total_harga: number
   }
@@ -5530,14 +5530,14 @@ export namespace Prisma {
 
   export type TransaksiUncheckedUpdateWithoutProdukInput = {
     id_transaksi?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
+    customerId?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
     total_harga?: IntFieldUpdateOperationsInput | number
   }
 
   export type TransaksiUncheckedUpdateManyWithoutProdukInput = {
     id_transaksi?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
+    customerId?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
     total_harga?: IntFieldUpdateOperationsInput | number
   }

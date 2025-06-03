@@ -13,7 +13,7 @@ model customers {
   name      String      @db.VarChar(255)
   email     String      @db.VarChar(255)
   image_url String      @db.VarChar(255)
-  Transaksi Transaksi[]
+  Transaksi Transaksi[] @relation("CustomerTransaksi")
 }
 
 model produk {
@@ -22,15 +22,15 @@ model produk {
   harga       Int
   stok        Int
   foto        String      @db.VarChar(255)
-  Transaksi   Transaksi[]
+  Transaksi   Transaksi[] @relation("ProdukTransaksi")
 }
 
 model Transaksi {
   id_transaksi String    @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  id_produk    String
-  produk       produk    @relation(fields: [id_produk], references: [id_produk])
-  id           String
-  customers    customers @relation(fields: [id], references: [id])
+  id_produk    String    @db.Uuid
+  produk       produk    @relation("ProdukTransaksi", fields: [id_produk], references: [id_produk])
+  customerId   String    @db.Uuid
+  customers    customers @relation("CustomerTransaksi", fields: [customerId], references: [id])
   Date         DateTime  @db.Date
   total_harga  Int
 }

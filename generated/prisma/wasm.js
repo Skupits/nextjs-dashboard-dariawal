@@ -138,7 +138,7 @@ exports.Prisma.ProdukScalarFieldEnum = {
 exports.Prisma.TransaksiScalarFieldEnum = {
   id_transaksi: 'id_transaksi',
   id_produk: 'id_produk',
-  id: 'id',
+  customerId: 'customerId',
   Date: 'Date',
   total_harga: 'total_harga'
 };
