@@ -1,5 +1,5 @@
 // app/about/page.tsx
-import TeamCard from "./TeamCard";
+import TeamCard from "@/app/ui/user/TeamCard";
 import { teamData } from "@/app/lib/placeholder-data";
 
 
